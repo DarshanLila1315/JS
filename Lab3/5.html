@@ -1,0 +1,25 @@
+<!-- Write a program to sort an array of student marks and display the highest and lowest marks. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="marks"></p>
+    <button id="AddMarks" onclick="AddItem()">Add Marks</button>
+    <script>
+        let a = document.getElementById("marks");
+        let b = document.getElementById("AddMarks");
+        let marks=[];
+        function AddItem(){
+            let item = parseInt(prompt("Enter Marks"));
+            marks.push(item);
+            marks.sort(function(x,y){return x-y});
+            a.innerHTML = "Marks: " + marks + "<br> Highest Marks: " + marks[marks.length - 1] + "<br> Lowest Marks: " + marks[0];
+        }    
+    </script>
+</body>
+</html>

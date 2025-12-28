@@ -1,0 +1,29 @@
+<!-- Write a program to create a simple image gallery slider with next and previous buttons. -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <img id="slider" src="1.jpg" " alt="Image Slider" width="1000" height="500">
+    <br>
+    <button onclick="prevImage()">Previous</button> 
+    <button onclick="nextImage()">Next</button>
+    <script>
+        var images = ["3.jpg", "4.jpg", "5.gif"];
+        var index = 0;
+
+        function nextImage() {
+            index = (index + 1) % images.length;
+            document.getElementById("slider").src = images[index];
+        }
+
+        function prevImage() {
+            index = (index - 1 + images.length) % images.length;
+            document.getElementById("slider").src = images[index];
+        }
+    </script>
+ </body>
+ </html>

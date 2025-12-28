@@ -1,0 +1,31 @@
+<!-- Write a program to calculate the total bill amount using map, filter, and reduce functions. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let prices = [100, 200, 300, 400, 500];
+
+        let discountedPrices = prices.map(function(price) {
+            return price * 0.9;
+        });
+
+        let filteredPrices = discountedPrices.filter(function(price) {
+            return price <= 300;
+        });
+
+        let totalBill = filteredPrices.reduce(function(total, price) {
+            return total + price;
+        }, 0);
+        document.write("Original Prices: " + prices + "<br>");
+        document.write("Discounted Prices: " + discountedPrices + "<br>");
+        document.write("Filtered Prices (<= 300): " + filteredPrices + "<br>");
+        document.write("Total Bill Amount: " + totalBill);
+    </script>
+</body>
+</html>

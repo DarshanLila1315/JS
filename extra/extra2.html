@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Factors of a num</title>
+</head>
+<body>
+    <input type="num" id="numinp" placeholder="Enter a num" required>
+    <button onclick="findFactors()">Find Factors</button>
+
+    <h3>Factors:</h3>
+    <div id="factres"></div>
+
+    <script>
+        function findFactors() {
+            let num = document.getElementById('numinp').value;
+            let factors = [];
+            
+            if (num <= 0) {
+                alert("Please enter a positive num.");
+                return;
+            }
+
+            for (let i = 1; i <= num; i++) {
+                if (num % i === 0) {
+                    factors.push(i);
+                }
+            }
+
+            document.getElementById('factres').innerHTML = factors.join(", ");
+        }
+    </script>
+</body>
+</html>

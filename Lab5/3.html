@@ -1,0 +1,42 @@
+<!-- Write a program to validate login form fields (email format, password length). -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <form id="loginForm">
+        <label for="email">Email:</label><br>
+        <input type="text" id="email" name="email" placeholder="Enter your email" onkeyup="validateForm()"><br>
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" placeholder="Enter your password" onkeyup="validateForm()"><br><br>
+    </form>
+    <p id="message"></p>
+    <script>
+        function validateForm() {
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            var message = document.getElementById("message");
+            var emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+            if (!email.match(emailPattern)) {
+                message.innerText = "Invalid email format.";
+                message.style.color = "red";
+                return false;
+            }
+
+            if (password.length < 6) {
+                message.innerText = "Password must be at least 6 characters long.";
+                message.style.color = "red";
+                return false;
+            }
+
+            message.innerText = "Login successful!";
+            message.style.color = "green";
+            return false; // Prevent form submission for demonstration
+        }
+    </script>
+ </body>
+ </html>

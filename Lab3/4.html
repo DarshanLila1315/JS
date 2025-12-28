@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="items"></p>
+    <button id="Add" onclick="Add()">Add</button>
+    <button id="Remove" onclick="Remove()">Remove</button>
+    
+    <script>
+        let cart=[];
+        function Add(){
+            let item=prompt("Enter item");
+            cart.push(item);
+            document.getElementById("items").innerHTML=cart;
+        }
+        function Remove(){
+            cart.pop();
+            document.getElementById("items").innerHTML=cart;
+        }
+
+        
+    </script>
+</body>
+</html>
